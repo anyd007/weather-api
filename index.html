@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pogoda dnia</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="weather_app">
+    <div class="left">
+        <div class="temperature"><span id="temperature">0</span>&deg;</div>
+        <div class="location"><span id="location">unknown</span></div>
+    </div>
+    <div class="right">
+        <div class="top">
+            <img id="icon" width="175px" src="images/200.png"/>
+            <div id="description"></div>
+        </div>
+
+        <div class="bottom">
+
+            <div class="humidity">
+                <img src="images/humidity.png" height="26px"/>
+                <span id="humidity">0</span>%
+            </div>
+
+            <div class="wind">
+                <span id="wind">0</span> m/s <span id="direction">N</span>
+            </div>
+
+        </div>
+    </div>
+    <p>
+        Miasto: <input id="city" type="text" onfocus="this.value=''" value="Podaj nazwe"/>
+    </p>
+    <button id="subimt">submit</button>
+</div>
+
+<script src="jquery-3.2.1.js"></script>
+<script src="script.js" type="text/javascript"></script>
+</body>
+</html>
