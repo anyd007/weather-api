@@ -1,4 +1,4 @@
-let APPID = "30ffbbc0b3a25385e8f52bb2c2cfea0a&units=metric";
+let APPID = "30ffbbc0b3a25385e8f52bb2c2cfea0a&units=metric&lang=pl";
 let temp;
 let loc;
 let icon;
@@ -6,6 +6,7 @@ let humidity;
 let wind;
 let direction;
 let description;
+let pressure;
 let input;
 
 function updateByZip(zip) {
@@ -34,13 +35,14 @@ $(document).ready(function(){
             "&APPID=" + APPID;
         sendRequest(url);
     });
-    $('#city').on('keydown', function(e) {
-        if (e.which === 13) {
+    $('#city').on('keydown', function(enter) {
+        if (enter.which === 13) {
             let url = "http://api.openweathermap.org/data/2.5/weather?" +
                 "q=" + input.value +
                 "&APPID=" + APPID;
             sendRequest(url);
-            e.preventDefault();
+            enter.preventDefault();
+            enter.currentTarget.value = "";
         }
     });
 });
@@ -56,6 +58,7 @@ function sendRequest(url) {
             weather.humidity = data.main.humidity;
             weather.wind = data.wind.speed;
             weather.direction = degreesToDirection(data.wind.deg);
+            weather.pressure = data.main.pressure;
             weather.loc = data.name;
             weather.temp = data.main.temp;
             update(weather);
@@ -91,6 +94,7 @@ function update(weather) {
     temp.innerHTML = weather.temp;
     loc.innerHTML = weather.loc;
     humidity.innerHTML = weather.humidity;
+    pressure.innerHTML = weather.pressure;
     description.innerHTML = weather.description;
     icon.src = "images/" + weather.icon + ".png";
     console.log(icon.src);
@@ -108,12 +112,13 @@ window.onload = function () {
     wind = document.getElementById("wind");
     direction = document.getElementById("direction");
     description = document.getElementById("description");
+    pressure = document.getElementById("pressure");
     input = document.getElementById("city");
 
     if(!navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-        let city = window.prompt("Nie mogę odnaleźć Twojej lokalizacji, podaj swój kod pocztowy.");
+        let city = window.prompt("Nie mogę odnaleźć Twojej lokalizacji, podaj nazwę miasta.");
         updateByCity(city);
     }
 }
