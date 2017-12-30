@@ -7,6 +7,8 @@ let wind;
 let direction;
 let description;
 let pressure;
+let sunrise;
+let sunset;
 let input;
 
 function updateByZip(zip) {
@@ -61,12 +63,20 @@ function sendRequest(url) {
             weather.pressure = data.main.pressure;
             weather.loc = data.name;
             weather.temp = data.main.temp;
+            weather.sunrise = setSun(data.sys.sunrise);
+            weather.sunset = setSun(data.sys.sunset);
+            // weather.rain = data.rain?data.rain["3h"] : '';
+            weather.temp_max = data.main.temp_max;
             update(weather);
 
         }
     };
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
+}
+function setSun(sun) {
+   let propsunrise = new Date(sun *1000);
+   return propsunrise.toLocaleTimeString();
 }
 function degreesToDirection(degrees) {
     let range = 360/16;
@@ -92,6 +102,8 @@ function update(weather) {
     wind.innerHTML = weather.wind;
     direction.innerHTML = weather.direction;
     temp.innerHTML = weather.temp;
+    sunrise.innerHTML = weather.sunrise;
+    sunset.innerHTML = weather.sunset;
     loc.innerHTML = weather.loc;
     humidity.innerHTML = weather.humidity;
     pressure.innerHTML = weather.pressure;
@@ -99,7 +111,6 @@ function update(weather) {
     icon.src = "images/" + weather.icon + ".png";
     console.log(icon.src);
 }
-
 function showPosition(position) {
     updateByGeo(position.coords.latitude, position.coords.longitude);
 }
@@ -113,6 +124,8 @@ window.onload = function () {
     direction = document.getElementById("direction");
     description = document.getElementById("description");
     pressure = document.getElementById("pressure");
+    sunrise = document.getElementById("sunrise");
+    sunset = document.getElementById("sunset");
     input = document.getElementById("city");
 
     if(!navigator.geolocation) {

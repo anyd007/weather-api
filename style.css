@@ -1,0 +1,71 @@
+body {
+    background-image: url("images/iStock-154930429.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header {
+    right: 2%;
+    width: 100%;
+    /*border: 2px red solid;*/
+    position: relative;
+}
+
+.png {
+    position: relative;
+    margin-top: 3%;
+}
+
+#icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vw;
+    height: 20vw;
+}
+
+.location {
+    width: 100%;
+    position: absolute;
+}
+
+.location h1 {
+    text-transform: uppercase;
+    font-family: 'newone.ttf', sans-serif;
+    margin-top: -2%;
+    text-align: right;
+    font-size: 7em;
+}
+
+.temperature {
+    position: absolute;
+    width: 100%;
+}
+
+.temperature h2 {
+    text-align: right;
+    font-size: 7em;
+    margin-top: 15%;
+    margin-bottom: 0;
+}
+
+.description h2 {
+    font-size: 3em;
+    text-align: center;
+    margin-top: -2%;
+    margin-bottom: 0;
+}
+
+.left {
+    float: left;
+    height: auto;
+    border: 2px blue solid;
+}
+
+.top {
+    border: 2px yellow solid;
+}
+.footer {
+    margin-top: 6%;
+}
