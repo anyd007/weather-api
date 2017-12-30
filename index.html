@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Pogoda dnia</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="/fonts/fonts.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
 <div class="weather_app">
-    <div class="left">
-        <div class="location"><span id="location">Nazda miasta</span></div>
-        <div class="temperature"><span id="temperature">0</span>&deg;</div>
+    <div class="header">
+        <div class="location">
+            <h1><span id="location"></span></h1>
+        </div>
+        <div class="temperature">
+            <h2><span id="temperature">0</span>&deg;C</h2>
+        </div>
+        <div class="png">
+            <img id="icon" src="images/200.png"/>
+            <div class="description">
+                <h2><span id="description">0</span></h2>
+            </div>
+        </div>
     </div>
-    <div class="right">
+    <div class="left">
         <div class="top">
             <div>
                 <span id="pressure">0</span>hPa
             </div>
-            <img id="icon" width="175px" src="images/200.png"/>
-            <div id="description"></div>
+            <h3>Wschód słońca czasu polskiego:</h3><span id="sunrise">0</span>
+            <h3>Zachód słońca czasu polskiego:</h3><span id="sunset">0</span>
         </div>
 
         <div class="bottom">
@@ -34,10 +46,12 @@
 
         </div>
     </div>
-    <p>
-        Miasto: <input id="city" type="text" onfocus="this.value=''" value="Podaj nazwe"/>
-    </p>
-    <button id="subimt">Kliknij</button>
+    <div class="footer">
+        <p>
+            Miasto: <input id="city" type="text" onfocus="this.value=''" value="Podaj nazwe"/>
+        </p>
+        <button id="subimt">Kliknij</button>
+    </div>
 </div>
 
 <script src="jquery-3.2.1.js"></script>
