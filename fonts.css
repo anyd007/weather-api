@@ -1,6 +1,12 @@
 @font-face {
-    font-family: 'newone.ttf';
-    src: url('newone.ttf') format('truetype');
+    font-family: "weather1.ttf";
+    src: url('fonts/weather1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "weather2.ttf";
+    src: url('fonts/weather2.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

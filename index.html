@@ -4,56 +4,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Pogoda dnia</title>
+    <link href="responsive.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
-    <link href="/fonts/fonts.css" rel="stylesheet" type="text/css">
+    <link href="fonts.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
-<div class="weather_app">
     <div class="header">
         <div class="location">
             <h1><span id="location"></span></h1>
         </div>
         <div class="temperature">
-            <h2><span id="temperature">0</span>&deg;C</h2>
+            <h2><span id="temperature">0</span>&deg</h2>
         </div>
         <div class="png">
-            <img id="icon" src="images/200.png"/>
+            <img class="icon" id="icon" src="images/question-mark-hi.png"/>
             <div class="description">
-                <h2><span id="description">0</span></h2>
+                <h2><span id="description">Jakie panuja warunki?</span></h2>
             </div>
+        </div>
+    </div>
+    <div class="mobiletext">
+        <h2>Chcesz sprawdzić inna lokalizację?</h2>
+    </div>
+    <div class="footer">
+        <div class="search">
+            <input id="city" type="text" onfocus="this.value=''" value="Podaj nazwę miasta"/><br/>
+            <button class="enjoy-css" id="subimt">Sprawdź</button>
         </div>
     </div>
     <div class="left">
-        <div class="top">
-            <div>
-                <span id="pressure">0</span>hPa
+        <h3>Wschód słońca czasu polskiego:<br/><span id="sunrise">0</span></h3>
+        <h3>Zachód słońca czasu polskiego:<br/><span id="sunset">0</span></h3>
+    </div>
+        <div class="right">
+            <div class="pressure">
+                <h3>Ciśnienie atmosferyczne:<br/><span id="pressure">0</span> hPa</h3>
             </div>
-            <h3>Wschód słońca czasu polskiego:</h3><span id="sunrise">0</span>
-            <h3>Zachód słońca czasu polskiego:</h3><span id="sunset">0</span>
-        </div>
-
-        <div class="bottom">
-
             <div class="humidity">
-                <img src="images/humidity.png" height="26px"/>
-                <span id="humidity">0</span>%
+                <h3>Wilgotność powietrza:<br/><span id="humidity">0</span>%</h3>
             </div>
 
             <div class="wind">
-                <span id="wind">0</span> m/s <span id="direction">N</span>
+                <h3>Siła i kierunek wiatru:<br/><span id="wind">0</span> m/s, <span id="direction"> N</span></h3>
             </div>
 
         </div>
-    </div>
-    <div class="footer">
-        <p>
-            Miasto: <input id="city" type="text" onfocus="this.value=''" value="Podaj nazwe"/>
-        </p>
-        <button id="subimt">Kliknij</button>
-    </div>
-</div>
 
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD0MhZoaYrUuG_m0BzBAULt3Z61atfYLWY",
+            databaseURL: "https://pogoda-andrzej.firebaseio.com",
+            authDomain: "pogoda-andrzej.firebaseapp.com",
+            projectId: "pogoda-andrzej",
+            storageBucket: "",
+            messagingSenderId: "365629716885"
+        };
+        firebase.initializeApp(config);
+    </script>
 <script src="jquery-3.2.1.js"></script>
 <script src="script.js" type="text/javascript"></script>
 </body>
