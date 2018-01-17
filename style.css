@@ -1,12 +1,31 @@
-body {
+body, html{
+    height: 100%;
+    margin: 0;
+}
+.mobiletext {
+    display: none;
+}
+.day{
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
     background-image: url("images/iStock-154930429.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
+}
+.night {
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url("images/nightbg.jpg");
+    background-size: cover;
+    background-position: center;
+    /*background-repeat: no-repeat;*/
 }
 
 .header {
-    right: 2%;
+    /*right: 2%;*/
     width: 100%;
     /*border: 2px red solid;*/
     position: relative;
@@ -14,10 +33,10 @@ body {
 
 .png {
     position: relative;
-    margin-top: 3%;
+    /*margin-top: 3%;*/
 }
 
-#icon {
+.icon {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -31,11 +50,14 @@ body {
 }
 
 .location h1 {
+    margin-right: 2%;
     text-transform: uppercase;
-    font-family: 'newone.ttf', sans-serif;
-    margin-top: -2%;
+    color: white;
+    font-family: 'weather1.ttf', sans-serif;
+    margin-top: -1%;
     text-align: right;
-    font-size: 7em;
+    font-size: 8vw;
+    text-shadow: 0 0 10px #f9cf00, 0 0 15px #f9cf00;
 }
 
 .temperature {
@@ -44,28 +66,204 @@ body {
 }
 
 .temperature h2 {
+    margin-right: 2%;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'weather1.ttf', sans-serif;
     text-align: right;
-    font-size: 7em;
-    margin-top: 15%;
+    font-size: 11vw;
+    margin-top: 10%;
     margin-bottom: 0;
+    text-shadow: 0 0 10px #f9cf00, 0 0 15px #f9cf00;
 }
 
 .description h2 {
-    font-size: 3em;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'weather1.ttf', sans-serif;
+    font-size: 3vw;
     text-align: center;
     margin-top: -2%;
     margin-bottom: 0;
+    text-shadow: 0 0 10px #f9cf00, 0 0 15px #f9cf00;
+}
+.footer {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: -5%;
+}
+
+.right {
+    margin-top: 8%;
+    margin-right: 5%;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'weather1.ttf', sans-serif;
+    float: right;
+    /*border: 2px orange solid;*/
+    text-shadow: 0 0 10px #f9cf00, 0 0 15px #f9cf00;
+}
+
+.pressure h3,
+.humidity h3,
+.wind h3 {
+    margin-bottom: 2%;
+    margin-top: 0;
+    font-size: 2vw;
+    text-align: center;
 }
 
 .left {
     float: left;
     height: auto;
-    border: 2px blue solid;
+    margin-top: 8%;
+    margin-right: 2%;
+    margin-left: 2%;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'weather1.ttf', sans-serif;
+    text-shadow: 0 0 10px #f9cf00, 0 0 15px #f9cf00;
 }
 
-.top {
-    border: 2px yellow solid;
+.left h3 {
+    font-size: 2vw;
+    margin-top: 0;
+    text-align: center;
 }
-.footer {
-    margin-top: 6%;
+.search {
+    position: relative;
+}
+
+input {
+    text-transform: uppercase;
+    font-family: 'weather1.ttf', sans-serif;
+    width: 40%;
+    height: 3vw;
+    border: 1px solid rgba(255, 255, 255, .4);
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    color: black;
+    text-align: center;
+    font-size: 2vw;
+    margin-bottom: 1vw;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+input:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+ /*button*/
+.enjoy-css {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 4vw;
+    position: absolute;
+    cursor: pointer;
+    top: 100%;
+    left: 44%;
+    padding: 0.5vw 2vw;
+    border: 0 none rgb(177,106,2);
+    border-bottom: 4px solid rgb(177,106,2);
+    -webkit-border-radius: 7px 7px 9px 9px;
+    border-radius: 7px 7px 9px 9px;
+    font: normal normal bold 2vw "weather1.ttf", Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    white-space: nowrap;
+    background: -webkit-linear-gradient(-90deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+    background: -moz-linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+    background: linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: auto auto;
+    background-size: auto auto;
+    -webkit-box-shadow: 0 -1px 1px 0 rgba(255,255,255,0.701961) inset, 0 1px 1px 0 rgb(177,106,2) ;
+    box-shadow: 0 -1px 1px 0 rgba(255,255,255,0.701961) inset, 0 1px 1px 0 rgb(177,106,2) ;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.498039) ;
+}
+
+.enjoy-css:hover {
+    background: rgb(225, 157, 60);
+    -webkit-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.enjoy-css:active {
+    height: 60px;
+    margin: 4px 0 0;
+    border: none;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    background: -webkit-linear-gradient(-90deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+    background: -moz-linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+    background: linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: auto auto;
+    background-size: auto auto;
+    -webkit-transition: all 30ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 30ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 30ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 30ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+/*button end*/
+
+@media screen and (max-width: 768px){
+    .mobiletext {
+        display: block;
+        color: white;
+        font-size: 3vw;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: 'weather1.ttf', sans-serif;
+        text-shadow: 0 0 10px #f9cf00, 0 0 15px #f9cf00;
+    }
+
+    .header {
+        width: 100%;
+    }
+    input {
+        width: 70%;
+        height: 6vw;
+        font-size: 5vw;
+    }
+    .icon {
+        margin-left: -4%;
+        margin-top: 12%;
+        width: 58vw;
+        height: auto;
+    }
+    .description h2{
+        text-align: center;
+        font-size: 7vw;
+        margin-left: 4%;
+        padding-bottom: 4%;
+    }
+    .temperature h2 {
+        font-size: 20vw;
+        margin-top: 2%;
+    }
+    .location h1 {
+        text-align: center;
+        margin-top: -12%;
+        font-size: 10vw;
+    }
+    .enjoy-css {
+        left: 40%;
+        height: 9vw;
+        font: normal normal bold 5vw "weather1.ttf", Helvetica, sans-serif;
+    }
 }
